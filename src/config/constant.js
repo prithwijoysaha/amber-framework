@@ -1,0 +1,51 @@
+export const ALLOWED_METHODS = ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'];
+export const DEFAULT_ERROR_MESSAGE = 'Oops !!! Something went wrong.';
+export const API_RESPONSE_CODES = {
+	OK: { statusCode: 200, defaultMessage: 'Success' },
+	BadRequest: { statusCode: 400, defaultMessage: 'Invalid data provided' },
+	Unauthorized: { statusCode: 401, defaultMessage: 'Unauthorized access' },
+	SessionExpired: { statusCode: 401, defaultMessage: 'Session has been expired' },
+	TokenExpired: { statusCode: 401, defaultMessage: 'Token has been expired' },
+	InvalidApiKey: { statusCode: 401, defaultMessage: 'Invalid api key provided' },
+	AccountSuspended: { statusCode: 401, defaultMessage: 'Account has been suspended' },
+	PaymentRequired: { statusCode: 402, defaultMessage: 'Payment is required' },
+	PermissionDenied: { statusCode: 403, defaultMessage: 'Permission denied' },
+	NotFound: { statusCode: 404, defaultMessage: 'Resource not found' },
+	MethodNotAllowed: { statusCode: 405, defaultMessage: 'Requested method is not allowed' },
+	NotAcceptable: { statusCode: 406, defaultMessage: 'Not acceptable request' },
+	ProxyAuthenticationRequired: { statusCode: 407, defaultMessage: 'Proxy authentication required' },
+	RequestTimeout: { statusCode: 408, defaultMessage: 'Request timeout' },
+	PayloadTooLarge: { statusCode: 413, defaultMessage: 'Payload too large' },
+	URITooLong: { statusCode: 414, defaultMessage: 'URI too long' },
+	TooManyRequest: { statusCode: 429, defaultMessage: 'Too many request' },
+	HeaderTooLarge: { statusCode: 431, defaultMessage: 'Request header fields too large' },
+	InternalServerError: { statusCode: 500, defaultMessage: DEFAULT_ERROR_MESSAGE },
+	ThirdPartyError: { statusCode: 500, defaultMessage: 'Third party error' },
+	UncaughtError: { statusCode: 500, defaultMessage: 'Uncaught error' },
+	NotImplemented: { statusCode: 501, defaultMessage: 'Feature still now not implemented' },
+	BadGateway: { statusCode: 502, defaultMessage: 'Bad gateway' },
+	MaintenanceMode: { statusCode: 503, defaultMessage: 'This service is under maintenance' },
+	GatewayTimeout: { statusCode: 504, defaultMessage: 'Gateway timeout' },
+	HTTPVersionNotSupported: { statusCode: 505, defaultMessage: 'HTTP version not supported' },
+};
+export const NO_AUTH_ROUTES = [
+	{ url: '/', methods: ['GET'] },
+	{ url: '/favicon.ico', methods: ['GET'] },
+	{ url: '/api-docs', methods: ['GET'] },
+	{ url: '/api-docs/swagger-ui-init.js', methods: ['GET'] },
+	{ url: '/api-docs/swagger-ui.css', methods: ['GET'] },
+	{ url: '/api-docs/swagger-ui-bundle.js', methods: ['GET'] },
+	{ url: '/api-docs/swagger-ui-standalone-preset.js', methods: ['GET'] },
+	{ url: '/assets/css/apidoc.css', methods: ['GET'] },
+];
+export const SENSITIVE_KEYS = ['password', 'newPassword', 'oldPassword', 'confirmPassword'];
+export const NO_LOG_ROUTES = [
+	{ url: '/', methods: ['GET'] },
+	{ url: '/favicon.ico', methods: ['GET'] },
+	{ url: '/api-docs', methods: ['GET'] },
+	{ url: '/api-docs/swagger-ui-init.js', methods: ['GET'] },
+	{ url: '/api-docs/swagger-ui.css', methods: ['GET'] },
+	{ url: '/api-docs/swagger-ui-bundle.js', methods: ['GET'] },
+	{ url: '/api-docs/swagger-ui-standalone-preset.js', methods: ['GET'] },
+	{ url: '/assets/css/apidoc.css', methods: ['GET'] },
+];
